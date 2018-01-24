@@ -85,12 +85,6 @@ router.post('/edit/:sportsmanID', function (req, res) {
         firstName: sportsman.firstName,
         sportType: sportsman.sportType
     };
-    // sportsmen.splice(sportsmanIndex, 1, {
-    //     ID: sportsman.ID,
-    //     lastName: sportsman.lastName,
-    //     firstName: sportsman.firstName,
-    //     sportType: sportsman.sportType
-    // });
     res.redirect('/');
 });
 
