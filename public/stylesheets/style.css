@@ -5,6 +5,14 @@ body {
 a {
   color: #00B7FF; }
 
+button {
+  padding: 12px 8px;
+  border: 1px solid #7b7b7b;
+  border-radius: 2px;
+  background: #fff;
+  font-weight: bold;
+  text-transform: uppercase; }
+
 .input {
   display: flex;
   flex-direction: column;
@@ -25,12 +33,14 @@ a {
     color: #fff; }
 
 .table {
-  margin-bottom: 24px;
-  border: 1px solid #ccc; }
+  margin-top: 12px;
+  margin-bottom: 24px; }
 
 .sportsman {
   display: flex;
-  padding: 8px 0; }
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid #e0e0e0; }
   .sportsman > div {
     flex: 1;
     padding: 0 4px; }

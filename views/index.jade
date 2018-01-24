@@ -1,8 +1,10 @@
 extends layout
 
 block content
-  h1 Lab1
-  p= title
+  h1 Лабораторная работа 1
+
+  form
+    button(formmethod="get", formaction="/add/") Добавить
 
   div.table
     each sportsman in sportsmen
@@ -10,16 +12,9 @@ block content
         div.lastName #{sportsman.lastName}
         div.firstName #{sportsman.firstName}
         div.sportType #{sportsman.sportType}
-
-   form(method="post")
-     div.input
-       span.label Фамилия
-       input(type="text", name="lastName")
-     div.input
-       span.label Имя
-       input(type="text", name="firstName")
-     div.input
-       span.label Вид спорта
-       input(type="text", name="sportType")
-     div.buttons
-       input(type="submit", value="Добавить")
+        div
+          form
+            button(formmethod="get", formaction='/delete/' + sportsman.ID) Удалить
+        div
+          form
+            button(formmethod="get", formaction='/edit/' + sportsman.ID) Редактировать
