@@ -4,3 +4,38 @@ body
 
 a
   color: #00B7FF
+
+.input
+  display: flex
+  flex-direction: column
+  margin-bottom: 8px
+
+  .label
+    margin-bottom: 4px
+
+  input
+    padding: 4px 8px
+
+.buttons
+  display: flex
+
+  input
+    &[type="submit"]
+      flex: 1
+      padding: 12px 8px
+      background: #31a518
+      text-transform: uppercase
+      font-weight: bold
+      color: #fff
+
+.table
+  margin-bottom: 24px
+  border: 1px solid #ccc
+
+.sportsman
+  display: flex
+  padding: 8px 0
+
+  & > div
+    flex: 1
+    padding: 0 4px

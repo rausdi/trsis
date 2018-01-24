@@ -1,5 +1,25 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  h1 Lab1
+  p= title
+
+  div.table
+    each sportsman in sportsmen
+      div.sportsman
+        div.lastName #{sportsman.lastName}
+        div.firstName #{sportsman.firstName}
+        div.sportType #{sportsman.sportType}
+
+   form(method="post")
+     div.input
+       span.label Фамилия
+       input(type="text", name="lastName")
+     div.input
+       span.label Имя
+       input(type="text", name="firstName")
+     div.input
+       span.label Вид спорта
+       input(type="text", name="sportType")
+     div.buttons
+       input(type="submit", value="Добавить")
