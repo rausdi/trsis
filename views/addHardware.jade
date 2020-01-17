@@ -1,0 +1,17 @@
+extends layout
+
+block content
+    h1 Добавить оборудование
+
+    form(method="post" name="hardware-add")
+        div.input
+            span.label Номер помещения
+            input(type="text", name="roomNo")
+        div.input
+            span.label Оборудование
+            input(type="text", name="item")
+        div.input
+            span.label Ответственный
+            input(type="text", name="responsible")
+        div.buttons
+            input(type="submit", value="Добавить")

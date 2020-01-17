@@ -1,89 +1,56 @@
 var express = require('express');
 var router = express.Router();
+var utils = require('./utils');
 
-function getID() {
-    return Math.random().toString(36).substr(2, 9);
-}
+const { items, getID, getItemIndexInArray } = utils;
 
-function findSportsman(id) {
-    let sportsmanIndex = -1;
-    sportsmen.find(function (element, index) {
-        if (element.ID === id) {
-            sportsmanIndex = index;
-        }
-    });
-
-    return sportsmanIndex;
-}
-
-const sportsmen = [
-    {
-        ID: getID(),
-        lastName: 'Иванов',
-        firstName: 'Иван',
-        sportType: 'Велоспорт'
-    },
-    {
-        ID: getID(),
-        lastName: 'Петров',
-        firstName: 'Петр',
-        sportType: 'Бокс'
-    },
-    {
-        ID: getID(),
-        lastName: 'Глебов',
-        firstName: 'Глеб',
-        sportType: 'Конный'
-    },
-];
-
-// GET: Получить список спортсменов
-router.get('/sportsmen', (req, res) => {
-    res.json(JSON.stringify(sportsmen));
+// GET: Получить список оборудования
+router.get('/hardware', (req, res) => {
+    res.json(items);
 });
 
-// GET: Получить спортсмена по ID
-router.get('/sportsmen/:ID', (req, res) => {
-    const sportsmanID = req.params.ID;
-    const sportsmanIndex = findSportsman(sportsmanID);
-    res.json(JSON.stringify(sportsmen[sportsmanIndex]));
+// GET: Получить оборудование по ID
+router.get('/hardware/:ID', (req, res) => {
+    const id = req.params.ID;
+    const index = getItemIndexInArray(id);
+    res.json(items[index]);
 });
 
 // POST: Добавление нового спортсмена
-router.post('/sportsmen/add', (req, res) => {
+router.post('/hardware/add', (req, res) => {
     const body = req.body;
-    const sportsman = {
+    const hardware = {
         ID: getID(),
-        lastName: body.lastName,
-        firstName: body.firstName,
-        sportType: body.sportType
+        roomNo: body.roomNo,
+        item: body.item,
+        responsible: body.responsible
     };
-    sportsmen.push(sportsman);
-    res.json(JSON.stringify(sportsmen));
+    items.push(hardware);
+    res.json(items);
 });
 
 // GET: Удаление спортсмена по ID
-router.get('sportsmen/delete/:ID', (req, res) => {
-    const sportsmanID = req.params.ID;
-    const sportsmanIndex = findSportsman(sportsmanID);
-    if (sportsmanIndex !== -1) {
-        sportsmen.splice(sportsmanIndex, 1);
+router.get('/hardware/delete/:ID', (req, res) => {
+    const id = req.params.ID;
+    const index = getItemIndexInArray(id);
+    if (index !== -1) {
+        items.splice(index, 1);
     }
-    res.json(JSON.stringify(sportsmen));
+    res.json(items);
 });
 
 // POST: Редактирование информации о спортсмене
-router.post('/sportsmen/edit/:ID', (req, res) => {
-    const sportsman = req.body;
-    const sportsmanID = req.params.ID;
-    const sportsmanIndex = findSportsman(sportsmanID);
-    sportsmen[sportsmanIndex] = {
-        ID: sportsman.ID,
-        lastName: sportsman.lastName,
-        firstName: sportsman.firstName,
-        sportType: sportsman.sportType
+router.post('/hardware/edit/:ID', (req, res) => {
+    const body = req.body;
+    const id = req.params.ID;
+    const index = getItemIndexInArray(id);
+    items[index] = {
+        ID: body.ID,
+        roomNo: body.roomNo,
+        item: body.item,
+        responsible: body.responsible
     };
-    res.json(JSON.stringify(sportsmen));
+    res.json(items);
 });
 
 module.exports = router;

@@ -7,14 +7,14 @@ block content
     button(formmethod="get", formaction="/add/") Добавить
 
   div.table
-    each sportsman in sportsmen
+    each hardware in hardwareItems
       div.sportsman
-        div.lastName #{sportsman.lastName}
-        div.firstName #{sportsman.firstName}
-        div.sportType #{sportsman.sportType}
+        div.lastName #{hardware.roomNo}
+        div.firstName #{hardware.item}
+        div.sportType #{hardware.responsible}
         div
           form
-            button(formmethod="get", formaction='/delete/' + sportsman.ID) Удалить
+            button(formmethod="post", formaction='/delete/' + hardware.ID) Удалить
         div
           form
-            button(formmethod="get", formaction='/edit/' + sportsman.ID) Редактировать
+            button(formmethod="get", formaction='/edit/' + hardware.ID) Редактировать
