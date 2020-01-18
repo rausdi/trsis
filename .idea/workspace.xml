@@ -2,16 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="16294cc3-0113-41cc-84a5-8e5cfd3e4df1" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/users.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/addSportsman.jade" beforeDir="false" afterPath="$PROJECT_DIR$/views/addHardware.jade" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/editSportsman.jade" beforeDir="false" afterPath="$PROJECT_DIR$/views/editHardware.jade" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/index.jade" beforeDir="false" afterPath="$PROJECT_DIR$/views/index.jade" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/www" beforeDir="false" afterPath="$PROJECT_DIR$/bin/www" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -121,7 +114,7 @@
       <workItem from="1516803030048" duration="20449000" />
       <workItem from="1518127264578" duration="9000" />
       <workItem from="1518127302930" duration="11000" />
-      <workItem from="1579264108626" duration="6290000" />
+      <workItem from="1579264108626" duration="8446000" />
     </task>
     <servers />
   </component>
